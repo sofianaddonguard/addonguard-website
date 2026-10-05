@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AddonGuard Technologies LLC builds intelligent, accessible and privacy-conscious software. NOMA AI is our unified intelligent assistant platform currently in development.">
-  <meta name="theme-color" content="#f5f9ff">
-  <title>AddonGuard Technologies LLC — NOMA AI</title>
+  <meta name="theme-color" content="#071a46">
+  <title>AddonGuard Technologies — NOMA AI</title>
   <style>
     :root {
-      --bg: #f5f9ff;
-      --surface: rgba(255, 255, 255, 0.9);
-      --text: #10213c;
-      --muted: #617086;
-      --line: #dbe7f5;
-      --blue: #1769e0;
-      --blue-dark: #0e4fae;
-      --blue-soft: #e8f2ff;
-      --cyan: #5bbcff;
-      --shadow: 0 22px 60px rgba(35, 88, 150, 0.10);
-      --radius: 24px;
-      --max: 1120px;
+      --bg0: #04112d;
+      --bg1: #071b46;
+      --bg2: #0b2b67;
+      --cyan: #79dcff;
+      --blue: #2f7df6;
+      --blue2: #1257d0;
+      --white: #f7fbff;
+      --muted: #b8c9e6;
+      --line: rgba(143, 200, 255, .28);
+      --glass: rgba(11, 42, 101, .44);
+      --glass2: rgba(7, 25, 63, .56);
+      --max: 1540px;
     }
 
     * { box-sizing: border-box; }
@@ -27,84 +27,168 @@
 
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
+      color: var(--white);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background:
-        radial-gradient(circle at 15% 5%, rgba(91, 188, 255, 0.22), transparent 30%),
-        radial-gradient(circle at 85% 12%, rgba(23, 105, 224, 0.14), transparent 28%),
-        linear-gradient(180deg, #f9fcff 0%, var(--bg) 52%, #ffffff 100%);
+        radial-gradient(circle at 78% 18%, rgba(34,120,255,.23), transparent 26%),
+        radial-gradient(circle at 25% 12%, rgba(73,160,255,.16), transparent 25%),
+        linear-gradient(180deg, #06193f 0%, #03122f 58%, #020c22 100%);
       min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -4;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 1px, transparent 1.4px),
+        radial-gradient(circle, rgba(116,197,255,.85) 0 1px, transparent 1.4px),
+        radial-gradient(circle, rgba(255,255,255,.65) 0 .8px, transparent 1.2px);
+      background-size: 112px 94px, 173px 149px, 211px 183px;
+      background-position: 0 0, 31px 44px, 89px 13px;
+      opacity: .7;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -12%;
+      z-index: -3;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 46% 14%, rgba(211,239,255,.74) 0 2%, rgba(80,160,255,.28) 6%, rgba(43,85,200,.18) 16%, transparent 34%),
+        conic-gradient(from 18deg at 47% 15%, transparent 0 8%, rgba(118,188,255,.15) 11%, transparent 18% 33%, rgba(64,125,255,.15) 37%, transparent 48% 100%),
+        radial-gradient(ellipse at 90% 44%, rgba(70,147,255,.19), transparent 31%),
+        radial-gradient(ellipse at 2% 74%, rgba(81,143,242,.18), transparent 25%);
+      filter: blur(9px) saturate(125%);
+      opacity: .92;
+      transform: rotate(-6deg);
     }
 
     a { color: inherit; }
-    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .page-shell {
+      width: min(var(--max), calc(100% - 64px));
+      margin: 0 auto;
+    }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(249, 252, 255, 0.82);
-      border-bottom: 1px solid rgba(219, 231, 245, 0.88);
+      z-index: 50;
+      background: rgba(4, 18, 52, .52);
+      border-bottom: 1px solid rgba(135, 195, 255, .18);
+      backdrop-filter: blur(22px) saturate(130%);
     }
 
     .nav {
-      min-height: 76px;
+      height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 28px;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
       font-weight: 800;
-      letter-spacing: -0.02em;
+      letter-spacing: -.02em;
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 13px;
+      width: 48px;
+      height: 48px;
       display: grid;
       place-items: center;
-      color: white;
+      border-radius: 14px;
+      font-size: 24px;
       font-weight: 900;
-      background: linear-gradient(145deg, var(--blue), var(--cyan));
-      box-shadow: 0 10px 24px rgba(23, 105, 224, 0.24);
+      background: linear-gradient(145deg, #58c7ff, #1264e6 62%, #0a43ad);
+      border: 1px solid rgba(161,222,255,.75);
+      box-shadow:
+        0 0 26px rgba(58,166,255,.45),
+        inset 0 0 18px rgba(255,255,255,.18);
     }
 
-    .brand-name { font-size: 16px; }
+    .brand-name { font-size: 20px; }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--muted);
+      gap: 40px;
+      font-weight: 650;
+      color: #d8e6fb;
     }
 
-    .nav-links a { text-decoration: none; }
-    .nav-links a:hover { color: var(--blue); }
+    .nav-links a {
+      text-decoration: none;
+      transition: .2s ease;
+    }
 
-    .nav-contact {
-      padding: 10px 16px;
+    .nav-links a:hover { color: #fff; }
+
+    .contact-pill {
+      padding: 13px 28px;
       border-radius: 999px;
-      background: var(--blue);
-      color: white !important;
-      box-shadow: 0 8px 22px rgba(23, 105, 224, 0.18);
+      border: 1px solid rgba(117,217,255,.92);
+      background: linear-gradient(145deg, rgba(34,129,252,.7), rgba(10,65,161,.72));
+      color: #fff !important;
+      box-shadow:
+        0 0 22px rgba(57,168,255,.48),
+        inset 0 0 14px rgba(255,255,255,.14);
     }
 
-    .hero { padding: 92px 0 64px; }
+    .hero {
+      position: relative;
+      min-height: 790px;
+      display: grid;
+      align-items: center;
+      padding: 64px 0 44px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: -8%;
+      right: -8%;
+      top: 0;
+      bottom: 0;
+      z-index: -2;
+      background:
+        radial-gradient(ellipse at 48% 2%, rgba(120,205,255,.22) 0 2%, transparent 20%),
+        linear-gradient(180deg, rgba(3,14,38,.05), rgba(5,21,56,.14));
+    }
+
+    .galaxy {
+      position: absolute;
+      top: -110px;
+      left: 34%;
+      width: 640px;
+      height: 330px;
+      z-index: -1;
+      opacity: .93;
+      filter: blur(.3px) drop-shadow(0 0 28px rgba(65,149,255,.34));
+      transform: rotate(-12deg);
+      border-radius: 50%;
+      background:
+        radial-gradient(ellipse at center, #fff 0 2%, #d7f3ff 3%, rgba(85,170,255,.84) 6%, rgba(35,90,220,.46) 13%, transparent 25%),
+        repeating-conic-gradient(from 18deg at center,
+          rgba(233,248,255,.65) 0 2deg,
+          rgba(84,168,255,.18) 4deg 10deg,
+          transparent 12deg 20deg);
+      mask-image: radial-gradient(ellipse at center, #000 0 58%, transparent 76%);
+    }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: .92fr 1.08fr;
       gap: 72px;
       align-items: center;
     }
@@ -112,292 +196,358 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      padding: 8px 12px;
-      border: 1px solid #cfe2fb;
+      gap: 12px;
+      padding: 10px 20px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.74);
-      color: var(--blue-dark);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
+      border: 1px solid rgba(114,200,255,.62);
+      background: rgba(12,43,99,.48);
+      box-shadow: inset 0 0 18px rgba(105,198,255,.06);
+      color: #f5fbff;
+      font-weight: 750;
     }
 
     .eyebrow-dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 0 5px rgba(91, 188, 255, 0.14);
+      background: #6bd9ff;
+      box-shadow: 0 0 16px #71ddff, 0 0 28px rgba(113,221,255,.7);
     }
 
     h1 {
-      margin: 24px 0 20px;
-      max-width: 760px;
-      font-size: clamp(48px, 7vw, 82px);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
+      margin: 30px 0 22px;
+      font-size: clamp(56px, 6.3vw, 92px);
+      line-height: .99;
+      letter-spacing: -.055em;
+      text-wrap: balance;
+      text-shadow: 0 6px 38px rgba(0,28,78,.45);
+    }
+
+    .headline-accent {
+      color: #c4ebff;
+      text-shadow: 0 0 28px rgba(95,195,255,.28);
     }
 
     .hero-copy {
       max-width: 720px;
       margin: 0;
-      font-size: clamp(18px, 2.2vw, 22px);
-      line-height: 1.65;
       color: var(--muted);
+      font-size: clamp(19px, 1.55vw, 25px);
+      line-height: 1.62;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
+      gap: 18px;
+      margin-top: 36px;
     }
 
-    .button {
+    .btn {
+      min-height: 58px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 14px;
+      gap: 12px;
+      padding: 0 30px;
+      border-radius: 20px;
       text-decoration: none;
-      font-size: 15px;
       font-weight: 800;
-      border: 1px solid transparent;
+      border: 1px solid rgba(142,202,255,.55);
+      backdrop-filter: blur(15px);
     }
 
-    .button-primary {
-      color: white;
-      background: linear-gradient(135deg, var(--blue), #277fe9);
-      box-shadow: 0 12px 28px rgba(23, 105, 224, 0.22);
+    .btn-primary {
+      background: linear-gradient(135deg, #1f7cff, #1764dc 55%, #0a3e9f);
+      border-color: #74d9ff;
+      box-shadow:
+        0 0 26px rgba(71,180,255,.58),
+        inset 0 0 18px rgba(255,255,255,.13);
     }
 
-    .button-secondary {
-      background: rgba(255, 255, 255, 0.80);
-      border-color: var(--line);
-      color: var(--text);
+    .btn-secondary {
+      background: rgba(7,34,85,.55);
+      box-shadow: inset 0 0 16px rgba(255,255,255,.04);
     }
 
-    .hero-card {
+    .hero-visual {
       position: relative;
-      min-height: 440px;
-      border: 1px solid rgba(207, 226, 251, 0.95);
-      border-radius: 36px;
-      background:
-        radial-gradient(circle at 50% 42%, rgba(91, 188, 255, 0.20), transparent 26%),
-        linear-gradient(145deg, rgba(255,255,255,0.96), rgba(234,244,255,0.84));
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      min-height: 570px;
       display: grid;
       place-items: center;
     }
 
-    .hero-card::before,
-    .hero-card::after {
+    .orbit-system {
+      position: relative;
+      width: min(690px, 100%);
+      aspect-ratio: 1.22;
+      display: grid;
+      place-items: center;
+    }
+
+    .orbit-system::before,
+    .orbit-system::after,
+    .orbit-mid {
       content: "";
       position: absolute;
       border-radius: 50%;
-      border: 1px solid rgba(23, 105, 224, 0.12);
+      border: 1.5px solid rgba(146,213,255,.45);
+      box-shadow: inset 0 0 26px rgba(71,154,255,.05);
+      transform: rotate(-8deg);
     }
 
-    .hero-card::before { width: 320px; height: 320px; }
-    .hero-card::after { width: 235px; height: 235px; }
+    .orbit-system::before {
+      width: 92%;
+      height: 60%;
+    }
 
-    .noma-orb {
+    .orbit-system::after {
+      width: 76%;
+      height: 47%;
+    }
+
+    .orbit-mid {
+      width: 58%;
+      height: 40%;
+      transform: rotate(17deg);
+    }
+
+    .core {
       position: relative;
-      z-index: 2;
-      width: 152px;
-      height: 152px;
+      z-index: 4;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      border-radius: 50%;
-      color: white;
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: 0.14em;
+      text-align: center;
       background:
-        radial-gradient(circle at 32% 24%, #90d5ff 0%, #3188ef 32%, #125fc9 66%, #0d438f 100%);
+        radial-gradient(circle at 34% 22%, rgba(174,235,255,.95) 0 2%, rgba(74,171,255,.88) 10%, rgba(26,102,229,.95) 48%, rgba(8,49,137,.98) 78%);
+      border: 2px solid rgba(177,231,255,.72);
       box-shadow:
-        0 24px 54px rgba(23, 105, 224, 0.28),
-        inset 0 0 34px rgba(255, 255, 255, 0.20);
+        0 0 28px rgba(72,181,255,.8),
+        0 0 70px rgba(44,132,255,.45),
+        inset 0 0 50px rgba(255,255,255,.13);
     }
+
+    .core::after {
+      content: "";
+      position: absolute;
+      inset: -16px;
+      border-radius: 50%;
+      border: 1px solid rgba(119,210,255,.45);
+      box-shadow: 0 0 30px rgba(84,196,255,.28);
+    }
+
+    .core-title {
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      margin-left: .14em;
+    }
+
+    .core-sub {
+      margin-top: 8px;
+      color: #a8ddff;
+      font-size: 20px;
+      letter-spacing: .25em;
+      margin-left: .25em;
+    }
+
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 32% 27%, #bceaff 0 3%, #55a9f7 16%, #164fbb 52%, #071d58 82%);
+      border: 1px solid rgba(169,222,255,.55);
+      box-shadow: 0 0 22px rgba(74,163,255,.35);
+    }
+
+    .p1 { width: 64px; height: 64px; left: 13%; top: 39%; }
+    .p2 { width: 54px; height: 54px; right: 13%; top: 47%; }
+    .p3 { width: 24px; height: 24px; left: 29%; bottom: 12%; opacity: .8; }
+    .p4 { width: 34px; height: 34px; right: 23%; top: 12%; opacity: .85; }
 
     .orbit-label {
       position: absolute;
-      z-index: 3;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.92);
-      color: #35516f;
-      font-size: 12px;
-      font-weight: 800;
-      box-shadow: 0 8px 24px rgba(32, 80, 132, 0.09);
-    }
-
-    .label-one { top: 58px; left: 44px; }
-    .label-two { top: 92px; right: 34px; }
-    .label-three { bottom: 82px; left: 44px; }
-    .label-four { bottom: 54px; right: 44px; }
-
-    section { padding: 54px 0; }
-
-    .section-title {
-      margin: 0 0 14px;
-      font-size: clamp(32px, 4vw, 48px);
-      letter-spacing: -0.035em;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 34px;
-    }
-
-    .card {
-      padding: 28px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: var(--surface);
-      box-shadow: 0 14px 42px rgba(41, 86, 136, 0.06);
-    }
-
-    .card-kicker {
-      margin: 0 0 14px;
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-    }
-
-    .card h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-      letter-spacing: -0.02em;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    .noma-panel {
-      margin-top: 34px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      padding: 34px;
-      border-radius: 30px;
-      border: 1px solid #cfe2fb;
-      background: linear-gradient(135deg, #ffffff 0%, #eef6ff 100%);
-      box-shadow: var(--shadow);
-    }
-
-    .noma-panel h3 {
-      margin: 0 0 14px;
-      font-size: 30px;
-      letter-spacing: -0.03em;
-    }
-
-    .noma-panel p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.72;
-      font-size: 17px;
-    }
-
-    .feature-list {
-      display: grid;
+      z-index: 7;
+      display: inline-flex;
+      align-items: center;
       gap: 12px;
-      align-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(157,218,255,.62);
+      background: linear-gradient(180deg, rgba(36,103,209,.62), rgba(7,44,113,.66));
+      color: #fff;
+      font-weight: 800;
+      box-shadow:
+        0 0 22px rgba(52,153,255,.25),
+        inset 0 0 17px rgba(255,255,255,.05);
+      backdrop-filter: blur(16px);
+      white-space: nowrap;
+    }
+
+    .label-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #8ee5ff;
+      font-size: 18px;
+      text-shadow: 0 0 12px rgba(142,229,255,.9);
+    }
+
+    .lab1 { left: 3%; top: 18%; }
+    .lab2 { right: -2%; top: 24%; }
+    .lab3 { left: 5%; bottom: 18%; }
+    .lab4 { right: -1%; bottom: 12%; }
+
+    .feature-bar {
+      position: relative;
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid rgba(122,196,255,.44);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(19,65,146,.52), rgba(5,31,84,.65));
+      box-shadow: 0 12px 52px rgba(0,22,71,.3), inset 0 0 20px rgba(255,255,255,.03);
+      backdrop-filter: blur(20px);
+      overflow: hidden;
     }
 
     .feature {
+      padding: 24px 28px;
       display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.80);
-      border: 1px solid #d9e8f8;
+      align-items: center;
+      gap: 16px;
+      min-height: 112px;
+    }
+
+    .feature + .feature {
+      border-left: 1px solid rgba(145,202,255,.24);
     }
 
     .feature-icon {
+      width: 48px;
+      height: 48px;
       flex: 0 0 auto;
-      width: 28px;
-      height: 28px;
-      border-radius: 9px;
+      border-radius: 15px;
       display: grid;
       place-items: center;
-      background: var(--blue-soft);
-      color: var(--blue);
-      font-weight: 900;
+      font-size: 23px;
+      color: #fff;
+      border: 1px solid rgba(133,217,255,.55);
+      background: rgba(25,99,213,.45);
+      box-shadow: 0 0 18px rgba(57,159,255,.28);
     }
 
     .feature strong {
       display: block;
-      margin-bottom: 3px;
-      font-size: 14px;
+      margin-bottom: 4px;
+      font-size: 16px;
     }
 
     .feature span {
-      color: var(--muted);
-      font-size: 13px;
+      color: #aec2e2;
+      font-size: 14px;
       line-height: 1.45;
     }
 
-    .contact-box {
-      margin-top: 32px;
-      padding: 34px;
-      border-radius: 30px;
-      color: white;
+    .content-section {
+      position: relative;
+      padding: 94px 0;
+    }
+
+    .section-header {
+      max-width: 840px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: #79dfff;
+      font-size: 12px;
+      font-weight: 850;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: clamp(38px, 4vw, 58px);
+      letter-spacing: -.04em;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: #afc2df;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .glass-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .glass-card {
+      padding: 30px;
+      min-height: 220px;
+      border-radius: 24px;
+      border: 1px solid rgba(127,195,255,.24);
+      background: linear-gradient(145deg, rgba(13,53,122,.38), rgba(5,24,66,.55));
+      box-shadow: 0 18px 50px rgba(0,17,55,.24);
+      backdrop-filter: blur(14px);
+    }
+
+    .glass-card h3 {
+      margin: 12px 0 10px;
+      font-size: 24px;
+    }
+
+    .glass-card p {
+      margin: 0;
+      color: #aec2df;
+      line-height: 1.7;
+    }
+
+    .contact-panel {
+      padding: 42px;
+      border-radius: 28px;
+      border: 1px solid rgba(126,210,255,.46);
       background:
-        radial-gradient(circle at 85% 20%, rgba(111, 204, 255, 0.25), transparent 28%),
-        linear-gradient(135deg, #0f4da9 0%, #1769e0 55%, #2787ef 100%);
-      box-shadow: 0 24px 58px rgba(23, 105, 224, 0.22);
+        radial-gradient(circle at 84% 20%, rgba(69,186,255,.18), transparent 26%),
+        linear-gradient(135deg, rgba(23,91,190,.58), rgba(5,33,88,.72));
+      box-shadow: 0 18px 60px rgba(0,23,71,.35);
     }
 
-    .contact-box h3 {
-      margin: 0 0 10px;
-      font-size: 30px;
-      letter-spacing: -0.03em;
+    .contact-panel h3 {
+      margin: 0 0 12px;
+      font-size: 34px;
     }
 
-    .contact-box p {
-      margin: 0 0 20px;
-      max-width: 700px;
-      color: rgba(255, 255, 255, 0.84);
+    .contact-panel p {
+      margin: 0 0 22px;
+      color: #c2d6ef;
+      font-size: 18px;
       line-height: 1.65;
     }
 
-    .contact-email {
+    .email-link {
       display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      background: white;
-      color: var(--blue-dark);
+      padding: 14px 20px;
+      border-radius: 14px;
       text-decoration: none;
-      font-weight: 800;
+      background: rgba(255,255,255,.94);
+      color: #0b4ca9;
+      font-weight: 850;
     }
 
     footer {
-      padding: 42px 0 52px;
-      color: var(--muted);
+      padding: 34px 0 48px;
+      color: #88a4ca;
       font-size: 13px;
     }
 
@@ -405,45 +555,53 @@
       display: flex;
       justify-content: space-between;
       gap: 24px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(132,192,255,.18);
+      padding-top: 26px;
     }
 
-    .footer-note {
-      max-width: 640px;
-      line-height: 1.6;
+    @media (max-width: 1100px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 520px; }
+      .feature-bar { grid-template-columns: repeat(2, 1fr); }
+      .feature:nth-child(3) { border-left: 0; border-top: 1px solid rgba(145,202,255,.24); }
+      .feature:nth-child(4) { border-top: 1px solid rgba(145,202,255,.24); }
+      .glass-grid { grid-template-columns: 1fr; }
+      .galaxy { left: 18%; }
     }
 
-    @media (max-width: 900px) {
-      .hero-grid,
-      .noma-panel { grid-template-columns: 1fr; }
-      .hero-card { min-height: 360px; }
-      .cards { grid-template-columns: 1fr; }
-      .hero { padding-top: 64px; }
-    }
-
-    @media (max-width: 640px) {
-      .shell { width: min(var(--max), calc(100% - 24px)); }
-      .nav { min-height: 68px; }
+    @media (max-width: 720px) {
+      .page-shell { width: min(var(--max), calc(100% - 24px)); }
+      .nav { height: 68px; }
+      .brand-mark { width: 40px; height: 40px; font-size: 20px; }
       .brand-name { font-size: 14px; }
-      .nav-links a:not(.nav-contact) { display: none; }
-      h1 { font-size: 48px; }
-      .hero { padding: 52px 0 36px; }
-      .hero-card { min-height: 310px; }
-      .noma-orb { width: 124px; height: 124px; font-size: 20px; }
-      .label-one { top: 34px; left: 20px; }
-      .label-two { top: 62px; right: 16px; }
-      .label-three { bottom: 58px; left: 18px; }
-      .label-four { bottom: 34px; right: 20px; }
-      section { padding: 42px 0; }
-      .card, .noma-panel, .contact-box { padding: 24px; }
+      .nav-links { gap: 10px; }
+      .nav-links a:not(.contact-pill) { display: none; }
+      .contact-pill { padding: 10px 16px; }
+      .hero { padding-top: 44px; }
+      h1 { font-size: 52px; }
+      .hero-copy { font-size: 18px; }
+      .hero-visual { min-height: 390px; }
+      .orbit-system { width: 100%; }
+      .core { width: 190px; height: 190px; }
+      .core-title { font-size: 30px; }
+      .core-sub { font-size: 15px; }
+      .orbit-label { padding: 9px 13px; font-size: 11px; gap: 6px; }
+      .label-icon { width: 20px; height: 20px; font-size: 14px; }
+      .lab1 { left: 0; top: 14%; }
+      .lab2 { right: 0; top: 21%; }
+      .lab3 { left: 0; bottom: 16%; }
+      .lab4 { right: 0; bottom: 11%; }
+      .feature-bar { grid-template-columns: 1fr; }
+      .feature + .feature { border-left: 0; border-top: 1px solid rgba(145,202,255,.24); }
+      .content-section { padding: 68px 0; }
+      .contact-panel { padding: 28px; }
       .footer-row { flex-direction: column; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="shell nav">
+    <div class="page-shell nav">
       <a class="brand" href="#top" aria-label="AddonGuard Technologies home">
         <span class="brand-mark">A</span>
         <span class="brand-name">AddonGuard Technologies</span>
@@ -452,163 +610,201 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#noma">NOMA AI</a>
-        <a class="nav-contact" href="#contact">Contact</a>
+        <a class="contact-pill" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="shell hero-grid">
-        <div>
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            AddonGuard Technologies LLC
-          </div>
+      <div class="galaxy" aria-hidden="true"></div>
 
-          <h1>Building intelligent technology for a simpler digital future.</h1>
-
-          <p class="hero-copy">
-            We create intelligent software designed to be useful, accessible and
-            privacy-conscious. Our flagship project, NOMA AI, is being built as a
-            unified assistant experience for users worldwide.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button button-primary" href="#noma">Discover NOMA AI</a>
-            <a class="button button-secondary" href="mailto:sofian@addonguard.com">Business contact</a>
-          </div>
-        </div>
-
-        <div class="hero-card" aria-label="NOMA AI concept illustration">
-          <span class="orbit-label label-one">Local intelligence</span>
-          <span class="orbit-label label-two">Memory</span>
-          <span class="orbit-label label-three">Tools</span>
-          <span class="orbit-label label-four">AI services</span>
-          <div class="noma-orb">NOMA</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="shell">
-        <p class="card-kicker">Company</p>
-        <h2 class="section-title">About AddonGuard Technologies</h2>
-        <p class="section-intro">
-          AddonGuard Technologies LLC is a technology company focused on the
-          development of intelligent software and artificial intelligence products.
-          We aim to build digital experiences that are practical, responsible and
-          designed for an international audience.
-        </p>
-
-        <div class="cards">
-          <article class="card">
-            <p class="card-kicker">Focus</p>
-            <h3>Intelligent software</h3>
-            <p>
-              Products that combine useful automation, local capabilities and
-              modern artificial intelligence into clear user experiences.
-            </p>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Principle</p>
-            <h3>Privacy-conscious design</h3>
-            <p>
-              Product architecture that considers privacy, security and responsible
-              use as core design requirements rather than afterthoughts.
-            </p>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Reach</p>
-            <h3>Built for a global audience</h3>
-            <p>
-              We are designing our products for international use, with language
-              and localization support as an important part of the product vision.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="noma">
-      <div class="shell">
-        <p class="card-kicker">Flagship project</p>
-        <h2 class="section-title">NOMA AI</h2>
-        <p class="section-intro">
-          NOMA AI is an intelligent assistant platform currently under active
-          development by AddonGuard Technologies LLC.
-        </p>
-
-        <div class="noma-panel">
+      <div class="page-shell">
+        <div class="hero-grid">
           <div>
-            <h3>One assistant. Multiple capabilities. One unified experience.</h3>
-            <p>
-              NOMA is being designed to combine local intelligence, memory, tools,
-              structured information and selected AI services behind one simple
-              interface. The project is currently in development and is not yet
-              publicly available.
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              AddonGuard Technologies LLC
+            </div>
+
+            <h1>
+              Building intelligent technology for a
+              <span class="headline-accent">simpler digital future.</span>
+            </h1>
+
+            <p class="hero-copy">
+              We create intelligent software designed to be useful, accessible and
+              privacy-conscious. Our flagship project, NOMA AI, is being built as a
+              unified assistant experience for users worldwide.
             </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#noma">Discover NOMA AI <span>→</span></a>
+              <a class="btn btn-secondary" href="mailto:sofian@addonguard.com">Business contact</a>
+            </div>
           </div>
 
-          <div class="feature-list">
-            <div class="feature">
-              <div class="feature-icon">1</div>
-              <div>
-                <strong>Unified assistant</strong>
-                <span>One experience instead of forcing users to manage multiple tools.</span>
+          <div class="hero-visual">
+            <div class="orbit-system">
+              <div class="orbit-mid"></div>
+
+              <span class="planet p1"></span>
+              <span class="planet p2"></span>
+              <span class="planet p3"></span>
+              <span class="planet p4"></span>
+
+              <div class="core">
+                <div>
+                  <div class="core-title">NOMA</div>
+                  <div class="core-sub">AI</div>
+                </div>
+              </div>
+
+              <div class="orbit-label lab1">
+                <span class="label-icon">◉</span>
+                Local intelligence
+              </div>
+              <div class="orbit-label lab2">
+                <span class="label-icon">◎</span>
+                Memory
+              </div>
+              <div class="orbit-label lab3">
+                <span class="label-icon">✦</span>
+                Tools
+              </div>
+              <div class="orbit-label lab4">
+                <span class="label-icon">☁</span>
+                AI services
               </div>
             </div>
+          </div>
+        </div>
 
-            <div class="feature">
-              <div class="feature-icon">2</div>
-              <div>
-                <strong>Local-first thinking</strong>
-                <span>Use local capabilities where they can deliver the required quality.</span>
-              </div>
+        <div class="feature-bar">
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <div>
+              <strong>Privacy-conscious</strong>
+              <span>Built with your trust in mind.</span>
             </div>
+          </div>
 
-            <div class="feature">
-              <div class="feature-icon">3</div>
-              <div>
-                <strong>International vision</strong>
-                <span>Designed to adapt across languages and regions as support is validated.</span>
-              </div>
+          <div class="feature">
+            <div class="feature-icon">◎</div>
+            <div>
+              <strong>Accessible</strong>
+              <span>Useful for everyone, everywhere.</span>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <div>
+              <strong>Real-world impact</strong>
+              <span>AI that simplifies everyday life.</span>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">◌</div>
+            <div>
+              <strong>A global future</strong>
+              <span>One assistant for a brighter tomorrow.</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="shell">
-        <p class="card-kicker">Contact</p>
-        <h2 class="section-title">Get in touch</h2>
-        <p class="section-intro">
-          For business, company or product inquiries, contact AddonGuard Technologies directly.
-        </p>
+    <section id="about" class="content-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-kicker">Company</div>
+          <h2 class="section-title">About AddonGuard Technologies</h2>
+          <p class="section-copy">
+            AddonGuard Technologies LLC is a technology company focused on the
+            development of intelligent software and artificial intelligence products.
+            We aim to build practical, responsible and accessible digital experiences
+            for an international audience.
+          </p>
+        </div>
 
-        <div class="contact-box">
+        <div class="glass-grid">
+          <article class="glass-card">
+            <div class="section-kicker">Focus</div>
+            <h3>Intelligent software</h3>
+            <p>Useful automation, local capabilities and modern artificial intelligence brought together in clear user experiences.</p>
+          </article>
+
+          <article class="glass-card">
+            <div class="section-kicker">Principle</div>
+            <h3>Privacy-conscious design</h3>
+            <p>Privacy, security and responsible use are treated as core product requirements rather than afterthoughts.</p>
+          </article>
+
+          <article class="glass-card">
+            <div class="section-kicker">Reach</div>
+            <h3>Built for a global audience</h3>
+            <p>Our products are designed with international use, localization and language support in mind.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="noma" class="content-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-kicker">Flagship project</div>
+          <h2 class="section-title">NOMA AI</h2>
+          <p class="section-copy">
+            NOMA AI is an intelligent assistant platform currently under active
+            development by AddonGuard Technologies LLC. It is designed to bring
+            local intelligence, memory, tools, structured information and selected
+            AI services into one unified experience.
+          </p>
+        </div>
+
+        <div class="glass-grid">
+          <article class="glass-card">
+            <div class="section-kicker">Unified</div>
+            <h3>One assistant</h3>
+            <p>A single user experience rather than forcing people to manage many separate tools and AI systems.</p>
+          </article>
+
+          <article class="glass-card">
+            <div class="section-kicker">Local-first</div>
+            <h3>Efficient intelligence</h3>
+            <p>Use local and deterministic capabilities when they can deliver the required quality, then escalate intelligently when needed.</p>
+          </article>
+
+          <article class="glass-card">
+            <div class="section-kicker">Worldwide</div>
+            <h3>International vision</h3>
+            <p>Designed to adapt across languages and regions as capabilities are implemented and validated.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section">
+      <div class="page-shell">
+        <div class="contact-panel">
+          <div class="section-kicker">Contact</div>
           <h3>AddonGuard Technologies LLC</h3>
-          <p>Business and product inquiries are handled through our company email.</p>
-          <a class="contact-email" href="mailto:sofian@addonguard.com">
-            sofian@addonguard.com
-          </a>
+          <p>For business, company or product inquiries, contact us directly through our professional company email.</p>
+          <a class="email-link" href="mailto:sofian@addonguard.com">sofian@addonguard.com</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="shell footer-row">
+    <div class="page-shell footer-row">
       <div>
         <strong>AddonGuard Technologies LLC</strong><br>
         © 2026 AddonGuard Technologies LLC. All rights reserved.
       </div>
-      <div class="footer-note">
-        NOMA AI is currently under active development and is not yet publicly available.
-      </div>
+      <div>NOMA AI is currently under active development and is not yet publicly available.</div>
     </div>
   </footer>
 </body>
